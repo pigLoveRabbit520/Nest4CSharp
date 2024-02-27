@@ -1213,7 +1213,7 @@ public class GeometryUtil {
         return finished;
     }
 
-    public static DataExchange ConvertToSvg(Segment center , double rx , double ry , double theta1 , double extent , double angleDegrees){
+    public static DataExchange ConvertToSvg(Segment center , double rx , double ry , double theta1 , double extent , double angleDegrees) {
         double theta2 = theta1 + extent;
 
         theta1 = degreesToRadians(theta1);
@@ -1285,17 +1285,17 @@ public class GeometryUtil {
         double uy = (y1 - cy1) / ry;
         double vx = (-x1 - cx1) / rx;
         double vy = (-y1 - cy1) / ry;
-        double n = Math.sqrt( (ux * ux) + (uy * uy) );
+        double n = Math.Sqrt( (ux * ux) + (uy * uy) );
         double p = ux;
         sign = (uy < 0) ? -1 : 1;
 
-        double theta = sign * Math.acos( p / n );
+        double theta = sign * Math.Acos( p / n );
         theta = radiansToDegree(theta);
 
-        n = Math.sqrt((ux * ux + uy * uy) * (vx * vx + vy * vy));
+        n = Math.Sqrt((ux * ux + uy * uy) * (vx * vx + vy * vy));
         p = ux * vx + uy * vy;
         sign = ((ux * vy - uy * vx) < 0) ? -1 : 1;
-        double delta = sign * Math.acos( p / n );
+        double delta = sign * Math.Acos( p / n );
         delta = radiansToDegree(delta);
 
         if (sweep == 1 && delta > 0)
@@ -1322,7 +1322,7 @@ public class GeometryUtil {
         return angle * ( 180 / Math.PI);
     }
 
-    static class DataExchange{
+    static class DataExchange {
         Segment p1;
         Segment p2;
         Segment center;

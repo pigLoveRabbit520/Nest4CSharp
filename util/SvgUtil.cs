@@ -1,20 +1,12 @@
-package com.qunhe.util.nest.util;
-
-import com.qunhe.util.nest.data.NestPath;
-import com.qunhe.util.nest.data.Placement;
-import com.qunhe.util.nest.data.Segment;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+namespace Nest4CSharp.Util;
 
 public class SvgUtil {
 
     public static List<String> svgGenerator(List<NestPath> list, List<List<Placement>> applied, double binwidth, double binHeight) throws Exception {
-        List<String> strings = new ArrayList<String>();
+        List<String> strings = new List<String>();
         int x = 10;
         int y = 0;
-        for (List<Placement> binlist : applied) {
+        foreach (List<Placement> binlist in applied) {
             String s = " <g transform=\"translate(" + x + "  " + y + ")\">" + "\n";
             s += "    <rect x=\"0\" y=\"0\" width=\"" + binwidth + "\" height=\"" + binHeight + "\"  fill=\"none\" stroke=\"#010101\" stroke-width=\"1\" />\n";
             for (Placement placement : binlist) {

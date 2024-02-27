@@ -4,9 +4,6 @@ using Nest4CSharp.Data;
 using Nest4CSharp.Util.Coor;
 using Clipper2Lib;
 
-/**
- * @author  yisa
- */
 public class CommonUtil {
 
 

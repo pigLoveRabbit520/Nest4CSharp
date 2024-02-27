@@ -13,7 +13,7 @@ public class Segment {
 
     public override bool Equals(Object obj) {
         Segment s = (Segment) obj;
-        if(x == s.x && y == s.y ){
+        if(x == s.x && y == s.y ) {
             return true;
         }
         return false;
