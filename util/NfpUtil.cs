@@ -3,9 +3,7 @@ namespace Nest4CSharp.Util;
 using Nest4CSharp.Data;
 using Clipper2Lib;
 
-/**
- * @author yisa
- */
+
 public class NfpUtil {
 
     /**
@@ -18,8 +16,8 @@ public class NfpUtil {
         bool searchEdges = config.isCONCAVE();
         bool useHoles = config.isUSE_HOLE();
 
-        NestPath A = GeometryUtil.rotatePolygon2Polygon(pair.getA() , pair.getKey().getArotation());
-        NestPath B = GeometryUtil.rotatePolygon2Polygon(pair.getB() , pair.getKey().getBrotation());
+        NestPath A = GeometryUtil.rotatePolygon2Polygon(pair.getA(), pair.getKey().getArotation());
+        NestPath B = GeometryUtil.rotatePolygon2Polygon(pair.getB(), pair.getKey().getBrotation());
 
         List<NestPath> nfp ;
         if(pair.getKey().isInside()) {
@@ -32,10 +30,10 @@ public class NfpUtil {
             else {
                 nfp = GeometryUtil.noFitPolygon(A,B,true,searchEdges);
             }
-            if(nfp != null && nfp.size() > 0){
-                for(int i = 0 ; i<nfp.size() ; i ++){
-                    if(GeometryUtil.polygonArea(nfp.get(i)) > 0 ){
-                        nfp.get(i).reverse();
+            if(nfp != null && nfp.Count() > 0){
+                for(int i = 0 ; i<nfp.Count(); i ++) {
+                    if(GeometryUtil.polygonArea(nfp.ElementAt(i)) > 0 ){
+                        nfp.ElementAt(i).reverse();
                     }
                 }
             }
